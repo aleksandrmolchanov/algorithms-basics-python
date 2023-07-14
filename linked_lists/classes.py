@@ -9,3 +9,16 @@ class LinkedList:
 
     def add(self, value):
         self.head = LinkedListNode(value, self.head)     
+
+    def insert(self, index, value):
+        if self.head is None:
+            self.head = LinkedListNode(value, None)
+        elif index == 0:
+            self.add(value)
+        else:
+            current = self.head
+            while current.next is not None and index > 0:
+                current = current.next
+                index = index - 1
+
+            current.next = LinkedListNode(value, current.next)
