@@ -22,3 +22,11 @@ class LinkedList:
                 index = index - 1
 
             current.next = LinkedListNode(value, current.next)
+
+    def contains(self, value):
+        current = self.head
+        while current is not None:
+            if current.value == value:
+                return True
+            current = current.next
+        return False
