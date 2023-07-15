@@ -38,3 +38,12 @@ class LinkedList:
             result = result + 1
             current = current.next
         return result
+    
+    def remove(self):
+        if self.head is None:
+            return None
+        
+        value = self.head.value
+        self.head = self.head.next
+
+        return value
