@@ -30,3 +30,11 @@ class LinkedList:
                 return True
             current = current.next
         return False
+
+    def length(self):
+        result = 0
+        current = self.head
+        while current is not None:
+            result = result + 1
+            current = current.next
+        return result
