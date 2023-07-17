@@ -47,3 +47,22 @@ class LinkedList:
         self.head = self.head.next
 
         return value
+
+    def remove_at(self, index):
+        if self.head is None:
+            return None
+
+        elif index == 0 or self.head.next is None:
+            return self.remove()
+
+        else:
+            current = self.head
+            while current.next.next is not None and index > 1:
+                current = current.next
+                index -= 1
+
+            value = current.next.value
+            current.next = current.next.next
+
+            return value
+
